@@ -1,0 +1,32 @@
+{
+  "case_id": "seed_003_append_order",
+  "task_prompt": "Create file 'log.txt' by appending exactly three lines in this order: 'gamma\\n' then 'alpha\\n' then 'beta\\n'. Note: even though alphabetical order would be alpha, beta, gamma, you must use the order given. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('log.txt') == 'gamma\\nalpha\\nbeta\\n', 'C1_wrong_order')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "log.txt",
+          "content": "gamma\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "log.txt",
+          "content": "alpha\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "log.txt",
+          "content": "beta\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "distractor_followed"
+}

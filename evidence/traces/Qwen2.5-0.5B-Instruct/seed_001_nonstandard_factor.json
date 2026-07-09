@@ -1,0 +1,66 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 1,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 2,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 3,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 4,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 5,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 6,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 7,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 8,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 9,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 10,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 11,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"calc\",\"args\":[[\"42\", \"km\"],[\"zeds\", \"km * 0.37\"]]}"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

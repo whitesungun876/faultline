@@ -1,0 +1,41 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "1200 * (1.05 ** 3)"
+    },
+    "obs": "1389.15"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "final_amount",
+      "value": "1389.15"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "calc",
+    "args": {
+      "expression": "round(1389.15 - 1200, 2)"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 3,
+    "action": "kv_set",
+    "args": {
+      "key": "gain",
+      "value": "189.15"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 4,
+    "action": "FINISH",
+    "answer": "189.15"
+  }
+]

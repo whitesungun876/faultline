@@ -1,0 +1,37 @@
+{
+  "case_id": "seed_004_compound_pipeline",
+  "task_prompt": "Compute 1200 * (1.05 ** 3) with the calc tool, round to 2 decimals, store it under kv key 'final_amount', then compute the gain (that amount minus 1200), round to 2 decimals, store under kv key 'gain'. Finish with the gain.",
+  "checker_src": "def check(state, final_answer):\n    try:\n        a = float(state['kv'].get('final_amount', 'x'))\n        g = float(state['kv'].get('gain', 'x'))\n    except Exception: return (False, 'D1_missing_or_nan')\n    if abs(a - 1389.15) > 0.01: return (False, 'D2_amount_wrong')\n    return (abs(g - 189.15) < 0.01, 'D3_gain_wrong')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "calc",
+        "args": {
+          "expression": "1200 * 1.05 ** 3"
+        }
+      },
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "final_amount",
+          "value": "1389.15"
+        }
+      },
+      {
+        "tool": "calc",
+        "args": {
+          "expression": "1389.15 - 1200"
+        }
+      },
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "gain",
+          "value": "189.15"
+        }
+      }
+    ],
+    "final_answer": "189.15"
+  },
+  "claimed_failure": "intermediate_state_lost"
+}

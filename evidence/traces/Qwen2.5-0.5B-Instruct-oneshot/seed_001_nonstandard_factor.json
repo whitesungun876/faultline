@@ -1,0 +1,15 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "42 * 0.37"
+    },
+    "obs": "15.54"
+  },
+  {
+    "step": 1,
+    "action": "FINISH",
+    "answer": "15.54"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(80 > 100 ? 0 : 80)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "budget",
+      "value": "80"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "calc",
+    "args": {
+      "expression": "if(budget == 100, budget = 0, budget)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 3,
+    "action": "kv_get",
+    "args": {
+      "key": "budget"
+    },
+    "obs": "80"
+  },
+  {
+    "step": 4,
+    "action": "calc",
+    "args": {
+      "expression": "if(80 < 100, 80 - 10, 80)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 5,
+    "action": "file_write",
+    "args": {
+      "name": "test.txt",
+      "content": "This is a test file."
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 6,
+    "action": "file_read",
+    "args": {
+      "name": "test.txt"
+    },
+    "obs": "This is a test file."
+  },
+  {
+    "step": 7,
+    "action": "file_append",
+    "args": {
+      "name": "test.txt",
+      "content": "\nUpdated file content."
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 8,
+    "action": "file_read",
+    "args": {
+      "name": "test.txt"
+    },
+    "obs": "This is a test file.\nUpdated file content."
+  },
+  {
+    "step": 9,
+    "action": "file_delete",
+    "args": {
+      "name": "test.txt"
+    },
+    "obs": "ERROR: unknown tool file_delete"
+  },
+  {
+    "step": 10,
+    "action": "kv_set",
+    "args": {
+      "key": "budget",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 11,
+    "action": "kv_get",
+    "args": {
+      "key": "budget"
+    },
+    "obs": "0"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

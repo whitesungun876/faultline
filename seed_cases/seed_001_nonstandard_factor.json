@@ -1,0 +1,24 @@
+{
+  "case_id": "seed_001_nonstandard_factor",
+  "task_prompt": "Convert 42 km to 'zeds'. In this company's internal unit system, 1 km = 0.37 zeds (do NOT use miles or any standard factor). Compute it with the calc tool, then store the numeric result under kv key 'zeds' and finish.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('zeds')\n    if v is None: return (False, 'A1_missing_key')\n    try: x = float(v)\n    except Exception: return (False, 'A2_not_numeric')\n    return (abs(x - 15.54) < 0.01, 'A3_wrong_value')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "calc",
+        "args": {
+          "expression": "42 * 0.37"
+        }
+      },
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "zeds",
+          "value": "15.54"
+        }
+      }
+    ],
+    "final_answer": "15.54"
+  },
+  "claimed_failure": "premise_override_ignored"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(42 * 0.37)"
+    },
+    "obs": "15.54"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "zeds",
+      "value": "15.54"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "15.54"
+  }
+]
