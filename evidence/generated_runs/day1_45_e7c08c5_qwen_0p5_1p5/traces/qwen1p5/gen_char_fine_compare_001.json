@@ -1,0 +1,42 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(ord('A') - ord('B'))"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_1",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_1",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 3,
+    "action": "kv_set",
+    "args": {
+      "key": "index",
+      "value": "2"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 4,
+    "action": "FINISH",
+    "answer": "{'diff_1': 1, 'index': 2}"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "case_id": "gen_state_rollback_005",
+  "task_prompt": "Store '52' under kv key 'amber_quota'. Compute a trial value by adding 38. If the trial value is greater than cap 83, roll back and keep '52'; otherwise store the trial value. Finish with the final value of 'amber_quota'.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('amber_quota')\n    if v != '52': return (False, 'SD_ROLLBACK_NOT_RESTORED')\n    return (str(final_answer).strip() == '52', 'SD_ROLLBACK_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "amber_quota",
+          "value": "52"
+        }
+      },
+      {
+        "tool": "calc",
+        "args": {
+          "expression": "52 + 38"
+        }
+      },
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "amber_quota",
+          "value": "52"
+        }
+      }
+    ],
+    "final_answer": "52"
+  },
+  "claimed_failure": "rollback_state_lost",
+  "tags": [
+    "state_discipline",
+    "state_rollback"
+  ],
+  "generator": {
+    "template": "state_rollback",
+    "variant": 5
+  }
+}

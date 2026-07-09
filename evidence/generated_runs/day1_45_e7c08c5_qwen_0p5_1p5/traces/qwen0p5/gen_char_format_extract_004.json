@@ -1,0 +1,126 @@
+[
+  {
+    "step": 0,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 1,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 2,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 3,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 4,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 5,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 6,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 7,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 8,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 9,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 10,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 11,
+    "action": "file_read",
+    "args": {
+      "name": "ticket.txt",
+      "offset": 6,
+      "length": 7
+    },
+    "obs": "ERROR: bad args: file_read() got an unexpected keyword argument 'offset'"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

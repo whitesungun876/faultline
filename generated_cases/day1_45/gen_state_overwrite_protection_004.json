@@ -1,0 +1,32 @@
+{
+  "case_id": "gen_state_overwrite_protection_004",
+  "task_prompt": "Set kv key 'brisk_lock' to 'keep-56'. A proposed update wants to change it to 'swap-749', but protected keys may be overwritten only when the guard code is 'allow'. The guard code here is 'closed', so preserve the original value. Finish with the final value of 'brisk_lock'.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('brisk_lock')\n    if v != 'keep-56': return (False, 'SD_PROTECT_OVERWRITTEN')\n    return (str(final_answer).strip() == 'keep-56', 'SD_PROTECT_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "brisk_lock",
+          "value": "keep-56"
+        }
+      },
+      {
+        "tool": "kv_get",
+        "args": {
+          "key": "brisk_lock"
+        }
+      }
+    ],
+    "final_answer": "keep-56"
+  },
+  "claimed_failure": "overwrite_guard_ignored",
+  "tags": [
+    "state_discipline",
+    "overwrite_protection"
+  ],
+  "generator": {
+    "template": "state_overwrite_protection",
+    "variant": 4
+  }
+}

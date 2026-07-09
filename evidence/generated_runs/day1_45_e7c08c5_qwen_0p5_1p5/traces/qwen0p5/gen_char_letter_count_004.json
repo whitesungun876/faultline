@@ -1,0 +1,114 @@
+[
+  {
+    "step": 0,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 1,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 2,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 3,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 4,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 5,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 6,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 7,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 8,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 9,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 10,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 11,
+    "action": "kv_get",
+    "args": {
+      "key": "count_e_4",
+      "default": 0
+    },
+    "obs": "ERROR: bad args: kv_get() got an unexpected keyword argument 'default'"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

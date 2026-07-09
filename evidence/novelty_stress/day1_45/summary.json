@@ -1,0 +1,26 @@
+{
+  "cases": 45,
+  "templates": {
+    "char_fine_compare": 5,
+    "char_format_extract": 5,
+    "char_letter_count": 5,
+    "char_substring_overlap": 5,
+    "state_conditional_write": 5,
+    "state_overwrite_protection": 5,
+    "state_read_before_write": 5,
+    "state_rollback": 5,
+    "state_sequence_dependency": 5
+  },
+  "signatures": {
+    "025bed38bc80b788": 5,
+    "2d9e1b04e94d9cc8": 5,
+    "4c1809d6d4eb3d65": 5,
+    "5a5fc128809d14f2": 5,
+    "655dd38a04c5f709": 5,
+    "839c242939b2b24f": 5,
+    "c102c0cd9b3c445a": 5,
+    "d9329cfe5bddd894": 5,
+    "fa9f673203ec400f": 5
+  },
+  "mixed_template_signatures": {}
+}

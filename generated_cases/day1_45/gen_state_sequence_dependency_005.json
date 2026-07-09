@@ -1,0 +1,47 @@
+{
+  "case_id": "gen_state_sequence_dependency_005",
+  "task_prompt": "Create file 'willow_log.txt' by appending exactly these lines in this order: 'cedar\\n' then 'mango\\n' then 'umbra\\n' then 'quartz\\n'. Do not sort them; alphabetical order would be cedar, mango, quartz, umbra. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('willow_log.txt') == 'cedar\\nmango\\numbra\\nquartz\\n', 'SD_SEQUENCE_WRONG_ORDER')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "willow_log.txt",
+          "content": "cedar\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "willow_log.txt",
+          "content": "mango\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "willow_log.txt",
+          "content": "umbra\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "willow_log.txt",
+          "content": "quartz\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "sequence_reordered",
+  "tags": [
+    "state_discipline",
+    "sequence_dependency"
+  ],
+  "generator": {
+    "template": "state_sequence_dependency",
+    "variant": 5
+  }
+}

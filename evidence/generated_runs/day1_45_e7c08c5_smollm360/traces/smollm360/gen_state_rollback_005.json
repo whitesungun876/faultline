@@ -1,0 +1,126 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "amber_quota",
+      "value": "52",
+      "cap": 83
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'cap'"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 2,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 3,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 4,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 5,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 6,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 7,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 8,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 9,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 10,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 11,
+    "action": "kv_set",
+    "args": {
+      "key": "amp_amp",
+      "value": "52",
+      "amp": 0
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'amp'"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

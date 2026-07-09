@@ -1,0 +1,15 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(count(overlap('mississippi', 'issi'))) % 5"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 1,
+    "action": "FINISH",
+    "answer": "5"
+  }
+]

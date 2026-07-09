@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_format_extract_001",
+  "task_prompt": "From this compact record, extract exactly the checksum field value and nothing else: 'ticket=BK-536;owner=vesta;checksum=y10c;status=cold'. Store it under kv key 'checksum_1' and finish with the checksum.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('checksum_1')\n    if v != 'y10c': return (False, 'CH_FORMAT_WRONG_FIELD')\n    return (str(final_answer).strip() == 'y10c', 'CH_FORMAT_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "checksum_1",
+          "value": "y10c"
+        }
+      }
+    ],
+    "final_answer": "y10c"
+  },
+  "claimed_failure": "format_field_extraction_wrong",
+  "tags": [
+    "character_level",
+    "format_extraction"
+  ],
+  "generator": {
+    "template": "char_format_extract",
+    "variant": 1
+  }
+}

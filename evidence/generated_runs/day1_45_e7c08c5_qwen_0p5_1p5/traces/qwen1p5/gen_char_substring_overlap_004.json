@@ -1,0 +1,24 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(str.count('level', 0, str.find(str, 'level') + len('level')) - 1)"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "substr_4",
+      "value": "6"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "6"
+  }
+]

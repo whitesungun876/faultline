@@ -1,0 +1,21 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\":\"kv_set\",\"args\":{\"key\":\"umbra_budget\",\"value\":\"81\"}}  \n{\"tool\":\"calc\",\"args\":{\"expression\":\"81 > 96 ? 139 : 81\"}}"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "umbra_budget",
+      "value": "139"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "139"
+  }
+]

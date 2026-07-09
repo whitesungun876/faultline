@@ -1,0 +1,102 @@
+[
+  {
+    "step": 0,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 1,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 2,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 3,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 4,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 5,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 6,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 7,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 8,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 9,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 10,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 11,
+    "action": "file_read",
+    "args": {
+      "name": "checksum_5"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

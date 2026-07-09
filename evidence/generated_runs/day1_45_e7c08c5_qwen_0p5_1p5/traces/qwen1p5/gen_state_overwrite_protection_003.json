@@ -1,0 +1,16 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "kepler_lock",
+      "value": "keep-22"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 1,
+    "action": "FINISH",
+    "answer": "keep-22"
+  }
+]

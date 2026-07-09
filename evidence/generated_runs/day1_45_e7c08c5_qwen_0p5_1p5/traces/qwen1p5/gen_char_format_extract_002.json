@@ -1,0 +1,16 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "checksum_2",
+      "value": "u92a"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 1,
+    "action": "FINISH",
+    "answer": "u92a"
+  }
+]

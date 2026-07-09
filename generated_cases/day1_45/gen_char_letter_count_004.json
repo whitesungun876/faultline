@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_letter_count_004",
+  "task_prompt": "Count how many times the letter 'e' appears in the exact string 'orbit kepler ember prism nyx'. Store the count under kv key 'count_e_4' and finish with the number.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('count_e_4')\n    if v != '4': return (False, 'CH_LETTER_WRONG_COUNT')\n    return (str(final_answer).strip() == '4', 'CH_LETTER_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "count_e_4",
+          "value": "4"
+        }
+      }
+    ],
+    "final_answer": "4"
+  },
+  "claimed_failure": "character_count_wrong",
+  "tags": [
+    "character_level",
+    "letter_count"
+  ],
+  "generator": {
+    "template": "char_letter_count",
+    "variant": 4
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_fine_compare_001",
+  "task_prompt": "Compare token A 'WL6XJEQBEK' with token B 'WL6XJFQBEK'. Store the 1-based index of the first differing character under kv key 'diff_1'. If they are identical, store 0. Finish with the index.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('diff_1')\n    if v != '6': return (False, 'CH_COMPARE_WRONG_INDEX')\n    return (str(final_answer).strip() == '6', 'CH_COMPARE_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "diff_1",
+          "value": "6"
+        }
+      }
+    ],
+    "final_answer": "6"
+  },
+  "claimed_failure": "fine_grained_comparison_wrong",
+  "tags": [
+    "character_level",
+    "fine_grained_compare"
+  ],
+  "generator": {
+    "template": "char_fine_compare",
+    "variant": 1
+  }
+}

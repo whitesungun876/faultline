@@ -1,0 +1,106 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "orbit_budget",
+      "value": "46"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 1,
+    "action": "calc",
+    "args": {
+      "expression": "(46 > 58)?(96):(46)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 2,
+    "action": "file_read",
+    "args": {
+      "name": "orbit_budget.txt"
+    },
+    "obs": "ERROR: file not found"
+  },
+  {
+    "step": 3,
+    "action": "file_write",
+    "args": {
+      "name": "orbit_budget.txt",
+      "content": "46"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 4,
+    "action": "calc",
+    "args": {
+      "expression": "(46 > 58)?(96):(46)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 5,
+    "action": "file_read",
+    "args": {
+      "name": "orbit_budget.txt"
+    },
+    "obs": "46"
+  },
+  {
+    "step": 6,
+    "action": "file_write",
+    "args": {
+      "name": "orbit_budget.txt",
+      "content": "96"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 7,
+    "action": "calc",
+    "args": {
+      "expression": "(96 > 58)?(96):(46)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 8,
+    "action": "file_read",
+    "args": {
+      "name": "orbit_budget.txt"
+    },
+    "obs": "96"
+  },
+  {
+    "step": 9,
+    "action": "file_write",
+    "args": {
+      "name": "orbit_budget.txt",
+      "content": "96"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 10,
+    "action": "calc",
+    "args": {
+      "expression": "(96 > 58)?(96):(46)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 11,
+    "action": "file_read",
+    "args": {
+      "name": "orbit_budget.txt"
+    },
+    "obs": "96"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

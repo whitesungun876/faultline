@@ -1,0 +1,90 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "tango_score",
+      "value": "19"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 1,
+    "action": "calc",
+    "args": {
+      "expression": "(19 < 32 ? 67 : 19)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 2,
+    "action": "kv_get",
+    "args": {
+      "key": "tango_score"
+    },
+    "obs": "19"
+  },
+  {
+    "step": 3,
+    "action": "calc",
+    "args": {
+      "expression": "(19 < 32 ? 67 : 19)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 4,
+    "action": "file_write",
+    "args": {
+      "name": "test.txt",
+      "content": "Current score is 19."
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 5,
+    "action": "calc",
+    "args": {
+      "expression": "(19 < 32 ? 67 : 19)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 6,
+    "action": "file_read",
+    "args": {
+      "name": "test.txt"
+    },
+    "obs": "Current score is 19."
+  },
+  {
+    "step": 7,
+    "action": "calc",
+    "args": {
+      "expression": "(19 < 32 ? 67 : 19)"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 8,
+    "action": "kv_set",
+    "args": {
+      "key": "tango_score",
+      "value": "67"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 9,
+    "action": "kv_get",
+    "args": {
+      "key": "tango_score"
+    },
+    "obs": "67"
+  },
+  {
+    "step": 10,
+    "action": "FINISH",
+    "answer": "67"
+  }
+]

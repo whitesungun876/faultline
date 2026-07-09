@@ -1,0 +1,24 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(\"juno rivet prism quartz ember\".match(/r/gi)).length"
+    },
+    "obs": "ERROR: invalid syntax (<unknown>, line 1)"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "count_r_2",
+      "value": "4"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "4"
+  }
+]

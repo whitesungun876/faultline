@@ -1,0 +1,24 @@
+[
+  {
+    "step": 0,
+    "action": "kv_get",
+    "args": {
+      "key": "count_r_3"
+    },
+    "obs": "ERROR: key not found"
+  },
+  {
+    "step": 1,
+    "action": "file_append",
+    "args": {
+      "name": "count_r_3.txt",
+      "content": "ERROR: key not found"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "1"
+  }
+]

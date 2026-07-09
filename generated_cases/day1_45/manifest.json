@@ -1,0 +1,15 @@
+{
+  "count": 45,
+  "seed": 20260709,
+  "templates": {
+    "char_fine_compare": 5,
+    "char_format_extract": 5,
+    "char_letter_count": 5,
+    "char_substring_overlap": 5,
+    "state_conditional_write": 5,
+    "state_overwrite_protection": 5,
+    "state_read_before_write": 5,
+    "state_rollback": 5,
+    "state_sequence_dependency": 5
+  }
+}

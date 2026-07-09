@@ -1,0 +1,47 @@
+{
+  "case_id": "gen_state_sequence_dependency_004",
+  "task_prompt": "Create file 'ivory_log.txt' by appending exactly these lines in this order: 'rivet\\n' then 'ivory\\n' then 'delta\\n' then 'harbor\\n'. Do not sort them; alphabetical order would be delta, harbor, ivory, rivet. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('ivory_log.txt') == 'rivet\\nivory\\ndelta\\nharbor\\n', 'SD_SEQUENCE_WRONG_ORDER')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "ivory_log.txt",
+          "content": "rivet\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "ivory_log.txt",
+          "content": "ivory\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "ivory_log.txt",
+          "content": "delta\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "ivory_log.txt",
+          "content": "harbor\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "sequence_reordered",
+  "tags": [
+    "state_discipline",
+    "sequence_dependency"
+  ],
+  "generator": {
+    "template": "state_sequence_dependency",
+    "variant": 4
+  }
+}

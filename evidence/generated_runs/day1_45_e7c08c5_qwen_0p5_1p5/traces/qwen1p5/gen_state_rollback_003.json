@@ -1,0 +1,26 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"calc\", \"args\": {\"expression\": \"(56 + 20)\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_quota\", \"value\": \"trial_value\"}}"
+  },
+  {
+    "step": 1,
+    "action": "MALFORMED",
+    "raw": "{\"error\": \"Invalid input format.\"}"
+  },
+  {
+    "step": 2,
+    "action": "kv_set",
+    "args": {
+      "key": "umbra_quota",
+      "value": "76"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 3,
+    "action": "FINISH",
+    "answer": "76"
+  }
+]

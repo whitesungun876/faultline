@@ -1,0 +1,114 @@
+[
+  {
+    "step": 0,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 1,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 2,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 3,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 4,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 5,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 6,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 7,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 8,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 9,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 10,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 11,
+    "action": "file_append",
+    "args": {
+      "file_name": "ivory_log.txt",
+      "content": "rivet\n"
+    },
+    "obs": "ERROR: bad args: file_append() got an unexpected keyword argument 'file_name'"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

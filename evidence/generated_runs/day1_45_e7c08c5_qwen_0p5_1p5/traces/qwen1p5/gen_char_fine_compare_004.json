@@ -1,0 +1,113 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(ord('A') - ord('MTYLPLGNND')) != (ord('A') - ord('MTYBPLGNND'))"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 3,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 4,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 5,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 6,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 7,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 8,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 9,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 10,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "0"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 11,
+    "action": "kv_set",
+    "args": {
+      "key": "diff_4",
+      "value": "1"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

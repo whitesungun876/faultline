@@ -1,0 +1,47 @@
+{
+  "case_id": "gen_state_sequence_dependency_003",
+  "task_prompt": "Create file 'harbor_log.txt' by appending exactly these lines in this order: 'amber\\n' then 'quartz\\n' then 'kepler\\n' then 'ember\\n'. Do not sort them; alphabetical order would be amber, ember, kepler, quartz. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('harbor_log.txt') == 'amber\\nquartz\\nkepler\\nember\\n', 'SD_SEQUENCE_WRONG_ORDER')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "harbor_log.txt",
+          "content": "amber\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "harbor_log.txt",
+          "content": "quartz\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "harbor_log.txt",
+          "content": "kepler\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "harbor_log.txt",
+          "content": "ember\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "sequence_reordered",
+  "tags": [
+    "state_discipline",
+    "sequence_dependency"
+  ],
+  "generator": {
+    "template": "state_sequence_dependency",
+    "variant": 3
+  }
+}

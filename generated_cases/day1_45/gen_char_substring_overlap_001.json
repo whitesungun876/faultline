@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_substring_overlap_001",
+  "task_prompt": "In the string 'bananana', count overlapping occurrences of substring 'ana'. Store the count under kv key 'substr_1' and finish with the number.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('substr_1')\n    if v != '3': return (False, 'CH_SUBSTR_WRONG_COUNT')\n    return (str(final_answer).strip() == '3', 'CH_SUBSTR_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "substr_1",
+          "value": "3"
+        }
+      }
+    ],
+    "final_answer": "3"
+  },
+  "claimed_failure": "overlapping_substring_missed",
+  "tags": [
+    "character_level",
+    "substring"
+  ],
+  "generator": {
+    "template": "char_substring_overlap",
+    "variant": 1
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "brisk_lock",
+      "value": "keep-56"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "brisk_lock",
+      "value": "swap-749"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "swap-749"
+  }
+]

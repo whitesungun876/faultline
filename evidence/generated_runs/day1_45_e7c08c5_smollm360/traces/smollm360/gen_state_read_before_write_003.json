@@ -1,0 +1,66 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 1,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 2,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 3,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 4,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 5,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 6,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 7,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 8,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 9,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 10,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 11,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"81\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"umbra_budget\", \"value\": \"139\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"umbra_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"139\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"umbra_budget\", \"content\": \"81\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"umbra_budget\"}}"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

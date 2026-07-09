@@ -1,0 +1,15 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "75+48"
+    },
+    "obs": "123"
+  },
+  {
+    "step": 1,
+    "action": "FINISH",
+    "answer": "123"
+  }
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "step": 0,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 1,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 2,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 3,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 4,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 5,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 6,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 7,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 8,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 9,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 10,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 11,
+    "action": "kv_set",
+    "args": {
+      "key": "ember_lock",
+      "value": "keep-64",
+      "guard_code": "red"
+    },
+    "obs": "ERROR: bad args: kv_set() got an unexpected keyword argument 'guard_code'"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

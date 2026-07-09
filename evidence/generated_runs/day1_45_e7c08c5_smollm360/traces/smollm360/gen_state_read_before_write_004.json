@@ -1,0 +1,66 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"88\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"a"
+  },
+  {
+    "step": 1,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 2,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 3,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 4,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 5,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 6,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 7,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 8,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 9,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 10,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 11,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \"args\": {\"key\": \"mango_budget\", \"value\": \"169\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"mango_budget\"}}\n{\"tool\": \"kv_set\", \""
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

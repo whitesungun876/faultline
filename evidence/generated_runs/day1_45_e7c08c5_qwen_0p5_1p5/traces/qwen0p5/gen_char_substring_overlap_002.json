@@ -1,0 +1,24 @@
+[
+  {
+    "step": 0,
+    "action": "calc",
+    "args": {
+      "expression": "(string.count('aa') - string.count('a'))"
+    },
+    "obs": "ERROR: unsupported expression"
+  },
+  {
+    "step": 1,
+    "action": "file_append",
+    "args": {
+      "name": "substr_2.txt",
+      "content": "ERROR: unsupported expression"
+    },
+    "obs": "OK"
+  },
+  {
+    "step": 2,
+    "action": "FINISH",
+    "answer": "4"
+  }
+]

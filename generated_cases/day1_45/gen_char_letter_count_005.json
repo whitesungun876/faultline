@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_letter_count_005",
+  "task_prompt": "Count how many times the letter 't' appears in the exact string 'glint amber mango umbra rivet'. Store the count under kv key 'count_t_5' and finish with the number.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('count_t_5')\n    if v != '2': return (False, 'CH_LETTER_WRONG_COUNT')\n    return (str(final_answer).strip() == '2', 'CH_LETTER_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "count_t_5",
+          "value": "2"
+        }
+      }
+    ],
+    "final_answer": "2"
+  },
+  "claimed_failure": "character_count_wrong",
+  "tags": [
+    "character_level",
+    "letter_count"
+  ],
+  "generator": {
+    "template": "char_letter_count",
+    "variant": 5
+  }
+}

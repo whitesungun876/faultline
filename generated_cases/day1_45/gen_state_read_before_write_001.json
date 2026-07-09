@@ -1,0 +1,32 @@
+{
+  "case_id": "gen_state_read_before_write_001",
+  "task_prompt": "First store value '53' under kv key 'prism_budget'. Then read the current value. Only if the current value is greater than 86, overwrite it with '142'. Otherwise leave it unchanged. Finish with the final value of 'prism_budget'.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('prism_budget')\n    if v != '53': return (False, 'SD_READ_STATE_CLOBBERED')\n    return (str(final_answer).strip() == '53', 'SD_READ_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "prism_budget",
+          "value": "53"
+        }
+      },
+      {
+        "tool": "kv_get",
+        "args": {
+          "key": "prism_budget"
+        }
+      }
+    ],
+    "final_answer": "53"
+  },
+  "claimed_failure": "read_before_write_skipped",
+  "tags": [
+    "state_discipline",
+    "read_before_write"
+  ],
+  "generator": {
+    "template": "state_read_before_write",
+    "variant": 1
+  }
+}

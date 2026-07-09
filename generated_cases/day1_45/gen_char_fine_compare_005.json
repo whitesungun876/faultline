@@ -1,0 +1,26 @@
+{
+  "case_id": "gen_char_fine_compare_005",
+  "task_prompt": "Compare token A 'DWUCNKRPSD' with token B 'DWUCNKHPSD'. Store the 1-based index of the first differing character under kv key 'diff_5'. If they are identical, store 0. Finish with the index.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('diff_5')\n    if v != '7': return (False, 'CH_COMPARE_WRONG_INDEX')\n    return (str(final_answer).strip() == '7', 'CH_COMPARE_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "diff_5",
+          "value": "7"
+        }
+      }
+    ],
+    "final_answer": "7"
+  },
+  "claimed_failure": "fine_grained_comparison_wrong",
+  "tags": [
+    "character_level",
+    "fine_grained_compare"
+  ],
+  "generator": {
+    "template": "char_fine_compare",
+    "variant": 5
+  }
+}

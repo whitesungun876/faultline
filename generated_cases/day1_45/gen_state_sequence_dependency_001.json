@@ -1,0 +1,47 @@
+{
+  "case_id": "gen_state_sequence_dependency_001",
+  "task_prompt": "Create file 'amber_log.txt' by appending exactly these lines in this order: 'fjord\\n' then 'vesta\\n' then 'lumen\\n' then 'delta\\n'. Do not sort them; alphabetical order would be delta, fjord, lumen, vesta. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('amber_log.txt') == 'fjord\\nvesta\\nlumen\\ndelta\\n', 'SD_SEQUENCE_WRONG_ORDER')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "amber_log.txt",
+          "content": "fjord\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "amber_log.txt",
+          "content": "vesta\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "amber_log.txt",
+          "content": "lumen\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "amber_log.txt",
+          "content": "delta\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "sequence_reordered",
+  "tags": [
+    "state_discipline",
+    "sequence_dependency"
+  ],
+  "generator": {
+    "template": "state_sequence_dependency",
+    "variant": 1
+  }
+}

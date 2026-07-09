@@ -1,0 +1,47 @@
+{
+  "case_id": "gen_state_sequence_dependency_002",
+  "task_prompt": "Create file 'tango_log.txt' by appending exactly these lines in this order: 'solace\\n' then 'tango\\n' then 'quartz\\n' then 'xenon\\n'. Do not sort them; alphabetical order would be quartz, solace, tango, xenon. Finish with 'done'.",
+  "checker_src": "def check(state, final_answer):\n    return (state['files'].get('tango_log.txt') == 'solace\\ntango\\nquartz\\nxenon\\n', 'SD_SEQUENCE_WRONG_ORDER')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "tango_log.txt",
+          "content": "solace\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "tango_log.txt",
+          "content": "tango\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "tango_log.txt",
+          "content": "quartz\n"
+        }
+      },
+      {
+        "tool": "file_append",
+        "args": {
+          "name": "tango_log.txt",
+          "content": "xenon\n"
+        }
+      }
+    ],
+    "final_answer": "done"
+  },
+  "claimed_failure": "sequence_reordered",
+  "tags": [
+    "state_discipline",
+    "sequence_dependency"
+  ],
+  "generator": {
+    "template": "state_sequence_dependency",
+    "variant": 2
+  }
+}

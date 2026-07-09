@@ -1,0 +1,32 @@
+{
+  "case_id": "gen_state_read_before_write_003",
+  "task_prompt": "First store value '81' under kv key 'umbra_budget'. Then read the current value. Only if the current value is greater than 96, overwrite it with '139'. Otherwise leave it unchanged. Finish with the final value of 'umbra_budget'.",
+  "checker_src": "def check(state, final_answer):\n    v = state['kv'].get('umbra_budget')\n    if v != '81': return (False, 'SD_READ_STATE_CLOBBERED')\n    return (str(final_answer).strip() == '81', 'SD_READ_WRONG_FINAL')\n",
+  "reference": {
+    "actions": [
+      {
+        "tool": "kv_set",
+        "args": {
+          "key": "umbra_budget",
+          "value": "81"
+        }
+      },
+      {
+        "tool": "kv_get",
+        "args": {
+          "key": "umbra_budget"
+        }
+      }
+    ],
+    "final_answer": "81"
+  },
+  "claimed_failure": "read_before_write_skipped",
+  "tags": [
+    "state_discipline",
+    "read_before_write"
+  ],
+  "generator": {
+    "template": "state_read_before_write",
+    "variant": 3
+  }
+}

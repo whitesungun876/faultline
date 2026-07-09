@@ -1,0 +1,66 @@
+[
+  {
+    "step": 0,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 1,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 2,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 3,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 4,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 5,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 6,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 7,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 8,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 9,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 10,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 11,
+    "action": "MALFORMED",
+    "raw": "{\"tool\": \"kv_set\", \"args\": {\"key\": \"orbit_budget\", \"value\": \"46\"}}\n{\"tool\": \"kv_get\", \"args\": {\"key\": \"orbit_budget\"}}\n{\"tool\": \"file_write\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_append\", \"args\": {\"name\": \"orbit_budget\", \"content\": \"96\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\": \"file_read\", \"args\": {\"name\": \"orbit_budget\"}}\n{\"tool\":"
+  },
+  {
+    "step": 12,
+    "action": "MAX_STEPS"
+  }
+]

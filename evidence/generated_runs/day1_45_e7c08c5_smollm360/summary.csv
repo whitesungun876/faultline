@@ -1,0 +1,46 @@
+actions,answer,assertion_id,case_id,detail,elapsed_s,gate,model,novelty,score,signature,tags,template
+"{'kv_set': 1, 'FINISH': 1}",OK,CH_COMPARE_WRONG_INDEX,gen_char_fine_compare_001,,1.154,VALID,smollm360,1.0,1.0,c27fc2ddcf10c4e5,"character_level,fine_grained_compare",char_fine_compare
+"{'kv_set': 1, 'FINISH': 1}",OK,CH_COMPARE_WRONG_INDEX,gen_char_fine_compare_002,,0.779,VALID,smollm360,0.7071,0.8243,c27fc2ddcf10c4e5,"character_level,fine_grained_compare",char_fine_compare
+"{'kv_set': 1, 'FINISH': 1}",OK,CH_COMPARE_WRONG_INDEX,gen_char_fine_compare_003,,0.733,VALID,smollm360,0.5774,0.7464,c27fc2ddcf10c4e5,"character_level,fine_grained_compare",char_fine_compare
+"{'kv_set': 1, 'FINISH': 1}",MTYBPLGNND,CH_COMPARE_WRONG_INDEX,gen_char_fine_compare_004,,0.832,VALID,smollm360,0.5,0.7,c27fc2ddcf10c4e5,"character_level,fine_grained_compare",char_fine_compare
+"{'kv_set': 1, 'FINISH': 1}",ok,CH_COMPARE_WRONG_INDEX,gen_char_fine_compare_005,,0.751,VALID,smollm360,0.4472,0.6683,c27fc2ddcf10c4e5,"character_level,fine_grained_compare",char_fine_compare
+"{'kv_set': 1, 'FINISH': 1}",y10c,CH_FORMAT_WRONG_FINAL,gen_char_format_extract_001,no failure reproduced,0.716,AGENT_PASSED,smollm360,,0.0,,"character_level,format_extraction",char_format_extract
+"{'kv_set': 1, 'FINISH': 1}",ok,CH_FORMAT_WRONG_FINAL,gen_char_format_extract_002,,0.699,VALID,smollm360,1.0,1.0,b6e6629d692e4f2c,"character_level,format_extraction",char_format_extract
+"{'kv_set': 1, 'FINISH': 1}",OK,CH_FORMAT_WRONG_FINAL,gen_char_format_extract_003,,0.671,VALID,smollm360,0.7071,0.8243,b6e6629d692e4f2c,"character_level,format_extraction",char_format_extract
+"{'kv_set': 1, 'FINISH': 1}",OK,CH_FORMAT_WRONG_FINAL,gen_char_format_extract_004,,0.671,VALID,smollm360,0.5774,0.7464,b6e6629d692e4f2c,"character_level,format_extraction",char_format_extract
+"{'kv_set': 1, 'FINISH': 1}",y66c,CH_FORMAT_WRONG_FINAL,gen_char_format_extract_005,no failure reproduced,0.757,AGENT_PASSED,smollm360,,0.0,,"character_level,format_extraction",char_format_extract
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_LETTER_WRONG_COUNT,gen_char_letter_count_001,,9.325,VALID,smollm360,1.0,1.0,71f3e815b5da74bb,"character_level,letter_count",char_letter_count
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_LETTER_WRONG_COUNT,gen_char_letter_count_002,,8.574,VALID,smollm360,0.7071,0.8243,71f3e815b5da74bb,"character_level,letter_count",char_letter_count
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_LETTER_WRONG_COUNT,gen_char_letter_count_003,,8.521,VALID,smollm360,0.5774,0.7464,71f3e815b5da74bb,"character_level,letter_count",char_letter_count
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_LETTER_WRONG_COUNT,gen_char_letter_count_004,,8.37,VALID,smollm360,0.5,0.7,71f3e815b5da74bb,"character_level,letter_count",char_letter_count
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_LETTER_WRONG_COUNT,gen_char_letter_count_005,,8.316,VALID,smollm360,0.4472,0.6683,71f3e815b5da74bb,"character_level,letter_count",char_letter_count
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_SUBSTR_WRONG_COUNT,gen_char_substring_overlap_001,,6.378,VALID,smollm360,1.0,1.0,68007102ec23bd54,"character_level,substring",char_substring_overlap
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_SUBSTR_WRONG_COUNT,gen_char_substring_overlap_002,,8.28,VALID,smollm360,0.7071,0.8243,68007102ec23bd54,"character_level,substring",char_substring_overlap
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_SUBSTR_WRONG_COUNT,gen_char_substring_overlap_003,,8.38,VALID,smollm360,0.5774,0.7464,68007102ec23bd54,"character_level,substring",char_substring_overlap
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_SUBSTR_WRONG_COUNT,gen_char_substring_overlap_004,,8.327,VALID,smollm360,0.5,0.7,68007102ec23bd54,"character_level,substring",char_substring_overlap
+"{'kv_get': 12, 'MAX_STEPS': 1}",,CH_SUBSTR_WRONG_COUNT,gen_char_substring_overlap_005,,8.374,VALID,smollm360,0.4472,0.6683,68007102ec23bd54,"character_level,substring",char_substring_overlap
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_COND_WRONG_VALUE,gen_state_conditional_write_001,,10.078,VALID,smollm360,1.0,1.0,30c8bb1932f64509,"state_discipline,conditional_write",state_conditional_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_COND_WRONG_VALUE,gen_state_conditional_write_002,,9.93,VALID,smollm360,0.7071,0.8243,30c8bb1932f64509,"state_discipline,conditional_write",state_conditional_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_COND_WRONG_VALUE,gen_state_conditional_write_003,,122.989,VALID,smollm360,0.5774,0.7464,30c8bb1932f64509,"state_discipline,conditional_write",state_conditional_write
+"{'kv_get': 12, 'MAX_STEPS': 1}",,SD_COND_WRONG_VALUE,gen_state_conditional_write_004,,6.01,VALID,smollm360,1.0,1.0,fb17d9f398e7e1f9,"state_discipline,conditional_write",state_conditional_write
+"{'kv_get': 12, 'MAX_STEPS': 1}",,SD_COND_WRONG_VALUE,gen_state_conditional_write_005,,6.164,VALID,smollm360,0.7071,0.8243,fb17d9f398e7e1f9,"state_discipline,conditional_write",state_conditional_write
+"{'kv_set': 1, 'FINISH': 1}",ok,SD_PROTECT_WRONG_FINAL,gen_state_overwrite_protection_001,,0.753,VALID,smollm360,1.0,1.0,e667802439bb0832,"state_discipline,overwrite_protection",state_overwrite_protection
+"{'kv_set': 1, 'FINISH': 1}",ok,SD_PROTECT_WRONG_FINAL,gen_state_overwrite_protection_002,,0.723,VALID,smollm360,0.7071,0.8243,e667802439bb0832,"state_discipline,overwrite_protection",state_overwrite_protection
+"{'kv_set': 1, 'FINISH': 1}",kepler_lock,SD_PROTECT_WRONG_FINAL,gen_state_overwrite_protection_003,,0.732,VALID,smollm360,0.5774,0.7464,e667802439bb0832,"state_discipline,overwrite_protection",state_overwrite_protection
+"{'kv_set': 1, 'FINISH': 1}",brisk_lock,SD_PROTECT_WRONG_FINAL,gen_state_overwrite_protection_004,,0.739,VALID,smollm360,0.5,0.7,e667802439bb0832,"state_discipline,overwrite_protection",state_overwrite_protection
+"{'kv_set': 1, 'FINISH': 1}",ok,SD_PROTECT_WRONG_FINAL,gen_state_overwrite_protection_005,,0.684,VALID,smollm360,0.4472,0.6683,e667802439bb0832,"state_discipline,overwrite_protection",state_overwrite_protection
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_READ_STATE_CLOBBERED,gen_state_read_before_write_001,,89.55,VALID,smollm360,1.0,1.0,a2d0b28295dcf1e6,"state_discipline,read_before_write",state_read_before_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_READ_STATE_CLOBBERED,gen_state_read_before_write_002,,117.956,VALID,smollm360,0.7071,0.8243,a2d0b28295dcf1e6,"state_discipline,read_before_write",state_read_before_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_READ_STATE_CLOBBERED,gen_state_read_before_write_003,,121.123,VALID,smollm360,0.5774,0.7464,a2d0b28295dcf1e6,"state_discipline,read_before_write",state_read_before_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_READ_STATE_CLOBBERED,gen_state_read_before_write_004,,126.96,VALID,smollm360,0.5,0.7,a2d0b28295dcf1e6,"state_discipline,read_before_write",state_read_before_write
+"{'MALFORMED': 12, 'MAX_STEPS': 1}",,SD_READ_STATE_CLOBBERED,gen_state_read_before_write_005,,131.246,VALID,smollm360,0.4472,0.6683,a2d0b28295dcf1e6,"state_discipline,read_before_write",state_read_before_write
+"{'kv_set': 1, 'FINISH': 1}",75,SD_ROLLBACK_WRONG_FINAL,gen_state_rollback_001,no failure reproduced,0.803,AGENT_PASSED,smollm360,,0.0,,"state_discipline,state_rollback",state_rollback
+"{'kv_set': 1, 'FINISH': 1}",72,SD_ROLLBACK_WRONG_FINAL,gen_state_rollback_002,no failure reproduced,0.733,AGENT_PASSED,smollm360,,0.0,,"state_discipline,state_rollback",state_rollback
+"{'kv_set': 1, 'FINISH': 1}",56,SD_ROLLBACK_WRONG_FINAL,gen_state_rollback_003,no failure reproduced,0.75,AGENT_PASSED,smollm360,,0.0,,"state_discipline,state_rollback",state_rollback
+"{'kv_set': 1, 'FINISH': 1}",72,SD_ROLLBACK_WRONG_FINAL,gen_state_rollback_004,no failure reproduced,0.758,AGENT_PASSED,smollm360,,0.0,,"state_discipline,state_rollback",state_rollback
+"{'kv_set': 12, 'MAX_STEPS': 1}",,SD_ROLLBACK_NOT_RESTORED,gen_state_rollback_005,,11.128,VALID,smollm360,1.0,1.0,190fc60353e1c587,"state_discipline,state_rollback",state_rollback
+"{'file_append': 12, 'MAX_STEPS': 1}",,SD_SEQUENCE_WRONG_ORDER,gen_state_sequence_dependency_001,,8.092,VALID,smollm360,1.0,1.0,6161b8da3ddaab47,"state_discipline,sequence_dependency",state_sequence_dependency
+"{'file_append': 12, 'MAX_STEPS': 1}",,SD_SEQUENCE_WRONG_ORDER,gen_state_sequence_dependency_002,,11.938,VALID,smollm360,0.7071,0.8243,6161b8da3ddaab47,"state_discipline,sequence_dependency",state_sequence_dependency
+"{'file_append': 12, 'MAX_STEPS': 1}",,SD_SEQUENCE_WRONG_ORDER,gen_state_sequence_dependency_003,,15.115,VALID,smollm360,0.5774,0.7464,6161b8da3ddaab47,"state_discipline,sequence_dependency",state_sequence_dependency
+"{'file_append': 12, 'MAX_STEPS': 1}",,SD_SEQUENCE_WRONG_ORDER,gen_state_sequence_dependency_004,,12.22,VALID,smollm360,0.5,0.7,6161b8da3ddaab47,"state_discipline,sequence_dependency",state_sequence_dependency
+"{'file_append': 12, 'MAX_STEPS': 1}",,SD_SEQUENCE_WRONG_ORDER,gen_state_sequence_dependency_005,,11.785,VALID,smollm360,0.4472,0.6683,6161b8da3ddaab47,"state_discipline,sequence_dependency",state_sequence_dependency
