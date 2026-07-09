@@ -187,7 +187,7 @@ def run_checker(case, state, final_answer, timeout=10):
 # Behavioral fingerprint (proposal 3.2, review point 1)
 # ---------------------------------------------------------------------------
 
-PROBE_BATTERY_VERSION = 1
+PROBE_BATTERY_VERSION = 2
 
 def probe_battery():
     """Fixed, versioned probe set. Deterministic and shared across cases so
@@ -207,22 +207,76 @@ def probe_battery():
         {"state": {"kv": {"zeds": "15.54"}, "files": {"notes.txt": "x"}}, "final_answer": "15.54"},
     ]
 
+def derived_probes(case, max_probes=12):
+    """Case-derived probes: the reference solution's final state, plus
+    single-field perturbations of it (drop a key, mutate a value, mutate a
+    file, wrong final answer).
+
+    Why: the shared battery alone cannot discriminate checkers whose keys it
+    never touches -- genuinely different checkers would collide into one
+    "fails everywhere" fingerprint and honest miners would eat duplicate
+    penalties (battery v1 bug, caught by the first weight sweep). Probing
+    around the case's own reference state makes distinct cases distinguishable,
+    while a cosmetic rewrite of the SAME case shares the same reference and
+    therefore the same derived probes."""
+    from .harness import run_reference
+    state, answer = run_reference(case.get("reference", {}))
+    answer = "" if answer is None else str(answer)
+    probes = [
+        {"state": state, "final_answer": answer},            # should PASS
+        {"state": {"kv": {}, "files": {}}, "final_answer": answer},
+        {"state": state, "final_answer": answer + "_x"},
+    ]
+    for key in sorted(state["kv"]):
+        if len(probes) >= max_probes:
+            break
+        without = {"kv": {k: v for k, v in state["kv"].items() if k != key},
+                   "files": dict(state["files"])}
+        mutated = {"kv": dict(state["kv"], **{key: str(state["kv"][key]) + "_x"}),
+                   "files": dict(state["files"])}
+        probes.extend([{"state": without, "final_answer": answer},
+                       {"state": mutated, "final_answer": answer}])
+    for name in sorted(state["files"]):
+        if len(probes) >= max_probes:
+            break
+        mutated = {"kv": dict(state["kv"]),
+                   "files": dict(state["files"], **{name: str(state["files"][name]) + "x"})}
+        probes.append({"state": mutated, "final_answer": answer})
+    return probes[:max_probes]
+
 _FINGERPRINT_CACHE = {}
 
-def checker_fingerprint(checker_src, timeout=15):
+def checker_fingerprint(checker_src, case=None, timeout=15):
     """Validator-derived behavioral identity of a checker.
 
-    The checker runs against the probe battery; the verdict vector is
-    canonicalized (PASS -> 'P', error -> 'E', each distinct assertion string
-    -> 'A0','A1',... by first appearance) and hashed. Assertion STRINGS are
-    erased by the canonicalization, so renaming them cannot mint a new
-    fingerprint -- only behaviorally different checkers differ. Returns a hex
-    digest, or None if the checker source fails to execute.
+    The checker runs against the shared probe battery plus (when `case` is
+    given) probes derived from the case's reference state. The verdict vector
+    is canonicalized (PASS -> 'P', error -> 'E', each distinct assertion
+    string -> 'A0','A1',... by first appearance) and hashed together with a
+    digest of the derived probe INPUTS. Consequences:
+
+    - renaming assertions / restructuring the checker: same fingerprint
+      (strings are erased; same case -> same derived probes)
+    - a genuinely different case (other keys, other expected values): different
+      derived probes -> different digest -> different fingerprint, so honest
+      variety is never billed as duplication
+    - evading the duplicate penalty now requires changing the case's actual
+      reference/environment, not just rewriting checker text -- and category
+      novelty decay still applies either way.
+
+    Returns a hex digest, or None if the checker source fails to execute.
     """
-    key = hashlib.sha256(checker_src.encode()).hexdigest()
+    probes = probe_battery()
+    digest = ""
+    if case is not None:
+        extra = derived_probes(case)
+        probes = probes + extra
+        digest = hashlib.sha256(
+            json.dumps(extra, sort_keys=True).encode()).hexdigest()[:12]
+    key = hashlib.sha256((digest + "|" + checker_src).encode()).hexdigest()
     if key in _FINGERPRINT_CACHE:
         return _FINGERPRINT_CACHE[key]
-    verdicts = _run_checker_probes(checker_src, probe_battery(), timeout=timeout)
+    verdicts = _run_checker_probes(checker_src, probes, timeout=timeout)
     if verdicts is None:
         return None
     labels, tokens = {}, []
@@ -235,7 +289,7 @@ def checker_fingerprint(checker_src, timeout=15):
             aid = v["assertion_id"]
             labels.setdefault(aid, f"A{len(labels)}")
             tokens.append(labels[aid])
-    fp = _hash_signature(f"probes_v{PROBE_BATTERY_VERSION}|" + ",".join(tokens))
+    fp = _hash_signature(f"probes_v{PROBE_BATTERY_VERSION}|{digest}|" + ",".join(tokens))
     _FINGERPRINT_CACHE[key] = fp
     return fp
 
@@ -328,7 +382,7 @@ def evaluate_case(case, backend=None, seen_signatures=None, targets=None, params
         return {"score": 0.0, "gate": "UNSOLVABLE", "detail": f"reference failed: {ref_assert}"}
 
     # Behavioral fingerprint (validator-derived; cosmetic rewrites collapse here).
-    fingerprint = checker_fingerprint(case["checker_src"])
+    fingerprint = checker_fingerprint(case["checker_src"], case)
     if fingerprint is None:
         return {"score": 0.0, "gate": "CHECKER_ERROR", "detail": "fingerprint probes failed"}
 

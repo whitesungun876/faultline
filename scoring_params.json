@@ -1,11 +1,13 @@
 {
   "_governance": "Versioned scoring parameters. A version only activates if effective_from - announced_at >= GOVERNANCE_TIMELOCK_SECONDS (7 days, code constant in faultline/verify.py). Validators IGNORE versions that violate the timelock, so parameter changes cannot be sprung on miners. Every version must cite evidence, following docs/proposal_3_1_revision.md discipline.",
+  "_tripwires": "Pre-registered triggers for revisiting the beta weights (see README, Beta parameters): (a) telemetry: low-difficulty (<=0.2) cases exceed 10% of top-quartile scores -> consider 0.5/0.5; (b) one category >50% of strategy revenue with stagnant distinct fingerprints -> consider raising novelty weight or steepening decay; (c) any registry/taxonomy change -> re-run run_weight_sweep.py before shipping. Revisions cite evidence/weight_sweep and telemetry reports.",
   "versions": [
     {
       "version": 1,
+      "stage": "beta",
       "announced_at": "2026-07-09T00:00:00Z",
       "effective_from": "2026-07-09T00:00:00Z",
-      "evidence": "README.md (Scoring Mechanics + Governance); genesis version, timelock-exempt",
+      "evidence": "README.md (Scoring Mechanics + Governance); genesis version, timelock-exempt. BETA DEFAULTS: 0.4/0.6 is a design starting point, to be revised from evidence/weight_sweep and telemetry reports, through this file's versioning + timelock.",
       "params": {
         "difficulty_weight": 0.4,
         "novelty_weight": 0.6,

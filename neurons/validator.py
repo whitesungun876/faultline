@@ -24,6 +24,7 @@ from protocol import CaseSynapse
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
 from faultline.verify import evaluate_case, load_scoring_params   # noqa: E402
 from faultline.harness import ScriptedBackend                     # noqa: E402
+from faultline.telemetry import log_evaluation                    # noqa: E402
 
 CORPUS_PATH = pathlib.Path("corpus_index.json")
 QUERY_PERIOD_S = 60
@@ -92,9 +93,11 @@ def main():
             step_score = 0.0
             if case_json:
                 try:
-                    result = evaluate_case(json.loads(case_json),
+                    case = json.loads(case_json)
+                    result = evaluate_case(case,
                                            seen_signatures=corpus["signatures"],
                                            targets=targets, params=params)
+                    log_evaluation(case, result)
                     step_score = result["score"]
                     bt.logging.info(f"uid={uid} gate={result['gate']} score={step_score} "
                                     f"category={result.get('failure_category')} "

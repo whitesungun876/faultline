@@ -46,12 +46,30 @@ def make_case(case_id, checker_src):
     }
 
 def test_cosmetic_rewrite_same_fingerprint_and_signature():
-    fp_a = checker_fingerprint(CHECKER_A)
-    fp_b = checker_fingerprint(CHECKER_A_RESKIN)
+    case = make_case("same", CHECKER_A)
+    fp_a = checker_fingerprint(CHECKER_A, case)
+    fp_b = checker_fingerprint(CHECKER_A_RESKIN, case)
     assert fp_a is not None and fp_a == fp_b
     sig_a = coarse_failure_signature({}, "SD_READ_STATE_CLOBBERED")
     sig_b = coarse_failure_signature({}, "SD_READ_zz9_minted")
     assert sig_a == sig_b  # minted assertion strings cannot mint buckets
+
+def test_distinct_cases_get_distinct_fingerprints():
+    """Battery v2: honest variety must not collide (the v1 blind spot)."""
+    other_checker = CHECKER_A.replace("'budget'", "'quota'").replace("'80'", "'55'")
+    other_case = {
+        "case_id": "other",
+        "task_prompt": "Store value '55' under kv key 'quota', then finish with it.",
+        "checker_src": other_checker,
+        "reference": {
+            "actions": [{"tool": "kv_set", "args": {"key": "quota", "value": "55"}}],
+            "final_answer": "55",
+        },
+    }
+    c1 = make_case("one", CHECKER_A)
+    fp1 = checker_fingerprint(c1["checker_src"], c1)
+    fp2 = checker_fingerprint(other_case["checker_src"], other_case)
+    assert fp1 is not None and fp2 is not None and fp1 != fp2
 
 def test_duplicate_fingerprint_is_hammered():
     corpus = {}

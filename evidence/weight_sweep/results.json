@@ -1,0 +1,78 @@
+{
+  "n_cases": 45,
+  "n_orders": 20,
+  "combos": {
+    "0.3/0.7": {
+      "strategy_revenue": {
+        "char_fine_compare": 3.612,
+        "state_read_before_write": 3.612,
+        "state_conditional_write": 3.612,
+        "char_letter_count": 3.612,
+        "state_sequence_dependency": 3.612,
+        "char_substring_overlap": 3.462,
+        "state_rollback": 3.362,
+        "state_overwrite_protection": 3.062,
+        "char_format_extract": 2.812
+      },
+      "kendall_tau_vs_baseline": 0.7222,
+      "flags": {
+        "novelty_carried": [],
+        "difficulty_farmed": []
+      }
+    },
+    "0.4/0.6": {
+      "strategy_revenue": {
+        "state_conditional_write": 3.739,
+        "state_read_before_write": 3.739,
+        "state_sequence_dependency": 3.739,
+        "char_fine_compare": 3.739,
+        "char_letter_count": 3.739,
+        "char_substring_overlap": 3.539,
+        "state_rollback": 3.406,
+        "state_overwrite_protection": 3.006,
+        "char_format_extract": 2.672
+      },
+      "kendall_tau_vs_baseline": 1.0,
+      "flags": {
+        "novelty_carried": [],
+        "difficulty_farmed": []
+      }
+    },
+    "0.5/0.5": {
+      "strategy_revenue": {
+        "char_fine_compare": 3.866,
+        "state_read_before_write": 3.866,
+        "state_conditional_write": 3.866,
+        "state_sequence_dependency": 3.866,
+        "char_letter_count": 3.866,
+        "char_substring_overlap": 3.616,
+        "state_rollback": 3.449,
+        "state_overwrite_protection": 2.949,
+        "char_format_extract": 2.533
+      },
+      "kendall_tau_vs_baseline": 0.7778,
+      "flags": {
+        "novelty_carried": [],
+        "difficulty_farmed": []
+      }
+    },
+    "0.6/0.4": {
+      "strategy_revenue": {
+        "state_read_before_write": 3.993,
+        "char_fine_compare": 3.993,
+        "state_conditional_write": 3.993,
+        "state_sequence_dependency": 3.993,
+        "char_letter_count": 3.993,
+        "char_substring_overlap": 3.693,
+        "state_rollback": 3.493,
+        "state_overwrite_protection": 2.893,
+        "char_format_extract": 2.393
+      },
+      "kendall_tau_vs_baseline": 0.8333,
+      "flags": {
+        "novelty_carried": [],
+        "difficulty_farmed": []
+      }
+    }
+  }
+}

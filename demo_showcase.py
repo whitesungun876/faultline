@@ -101,8 +101,8 @@ def main():
     # ------------------------------------------------------------------ 2
     banner(2, "Sybil attack: cosmetic re-skin to refresh novelty")
     say("Attacker rewrites the checker: new assertion names, reshuffled control flow.")
-    fp_orig = checker_fingerprint(CHECKER)
-    fp_skin = checker_fingerprint(CHECKER_RESKIN)
+    fp_orig = checker_fingerprint(CHECKER, make_case("honest_discovery", CHECKER))
+    fp_skin = checker_fingerprint(CHECKER_RESKIN, make_case("sneaky_reskin", CHECKER_RESKIN))
     say(f"behavioral fingerprint (original) = {fp_orig}")
     say(f"behavioral fingerprint (re-skin)  = {fp_skin}")
     say("Same verdict vector on the probe battery -> SAME fingerprint. Strings don't count.")
