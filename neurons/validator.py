@@ -2,7 +2,10 @@
 
 Backend selection:
   --mock_backend        scripted naive agent (no GPU; for wiring tests ONLY)
-  default               HFBackend pinned model (needs GPU/CPU with transformers + HF access)
+  default               rolling target registry from targets.json (HFBackend per tier)
+
+Scoring parameters come from scoring_params.json via load_scoring_params(),
+which enforces the governance timelock (surprise parameter changes are void).
 
 Run:
 python neurons/validator.py --netuid <NETUID> --subtensor.network test \
@@ -19,11 +22,10 @@ import bittensor as bt
 from protocol import CaseSynapse
 
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))
-from faultline.verify import evaluate_case          # noqa: E402
-from faultline.harness import ScriptedBackend        # noqa: E402
+from faultline.verify import evaluate_case, load_scoring_params   # noqa: E402
+from faultline.harness import ScriptedBackend                     # noqa: E402
 
 CORPUS_PATH = pathlib.Path("corpus_index.json")
-EMA_ALPHA = 0.2
 QUERY_PERIOD_S = 60
 
 def get_config():
@@ -40,12 +42,25 @@ def get_config():
         parser.error("--netuid is required")
     return config
 
-def load_backend(config):
+def load_targets(config):
+    """Rolling registry -> evaluate_case targets. Mock mode = single scripted tier."""
     if config.mock_backend:
-        return lambda: ScriptedBackend(['{"finish": "done"}'])
+        return [{"tier_id": "mock", "weight": 1.0,
+                 "backend": ScriptedBackend(['{"finish": "done"}'])}]
     from faultline.harness import HFBackend
-    backend = HFBackend()          # pinned model = the v0 target registry
-    return lambda: backend
+    from faultline.registry import load_registry, build_targets
+    return build_targets(load_registry(), lambda t: HFBackend(t["model_id"]))
+
+def load_corpus():
+    """Corpus index v2: {"version": 2, "signatures": {sig: record}}.
+    A legacy flat v1 map is archived, not merged: the signature definition
+    changed in proposal 3.2, so old signatures are not comparable."""
+    if CORPUS_PATH.exists():
+        doc = json.loads(CORPUS_PATH.read_text())
+        if "signatures" not in doc:
+            doc = {"version": 2, "legacy_v1": doc, "signatures": {}}
+        return doc
+    return {"version": 2, "signatures": {}}
 
 def main():
     config = get_config()
@@ -54,9 +69,14 @@ def main():
     subtensor = bt.Subtensor(config=config)
     metagraph = subtensor.metagraph(config.netuid)
     dendrite = bt.Dendrite(wallet=wallet)
-    make_backend = load_backend(config)
 
-    corpus = json.loads(CORPUS_PATH.read_text()) if CORPUS_PATH.exists() else {}
+    params, params_meta = load_scoring_params()
+    ema_alpha = params["ema_alpha"]
+    bt.logging.info(f"scoring params v{params_meta['version']} ({params_meta['source']})")
+    targets = load_targets(config)
+    bt.logging.info(f"registry targets: {[(t['tier_id'], round(t['weight'], 3)) for t in targets]}")
+
+    corpus = load_corpus()
     scores = np.zeros(len(metagraph.uids), dtype=np.float32)
 
     while True:
@@ -72,12 +92,16 @@ def main():
             step_score = 0.0
             if case_json:
                 try:
-                    result = evaluate_case(json.loads(case_json), make_backend(), corpus)
+                    result = evaluate_case(json.loads(case_json),
+                                           seen_signatures=corpus["signatures"],
+                                           targets=targets, params=params)
                     step_score = result["score"]
-                    bt.logging.info(f"uid={uid} gate={result['gate']} score={step_score}")
+                    bt.logging.info(f"uid={uid} gate={result['gate']} score={step_score} "
+                                    f"category={result.get('failure_category')} "
+                                    f"dup_fp={result.get('duplicate_fingerprint')}")
                 except Exception as e:
                     bt.logging.warning(f"uid={uid} evaluation error: {e}")
-            scores[uid] = (1 - EMA_ALPHA) * scores[uid] + EMA_ALPHA * step_score
+            scores[uid] = (1 - ema_alpha) * scores[uid] + ema_alpha * step_score
 
         CORPUS_PATH.write_text(json.dumps(corpus))
 

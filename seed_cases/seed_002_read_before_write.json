@@ -1,7 +1,7 @@
 {
   "case_id": "seed_002_read_before_write",
   "task_prompt": "First store value '80' under kv key 'budget'. Then, ONLY IF the current value of 'budget' is greater than 100, overwrite it with '0'. Otherwise leave it unchanged. Finish with the final value of 'budget'.",
-  "checker_src": "def check(state, final_answer):\n    if state['kv'].get('budget') != '80': return (False, 'B1_state_clobbered')\n    return (str(final_answer).strip() == '80', 'B2_wrong_final')\n",
+  "checker_src": "def check(state, final_answer):\n    if state['kv'].get('budget') != '80': return (False, 'SD_READ_STATE_CLOBBERED')\n    return (str(final_answer).strip() == '80', 'SD_READ_WRONG_FINAL')\n",
   "reference": {
     "actions": [
       {

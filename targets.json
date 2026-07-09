@@ -1,0 +1,31 @@
+{
+  "registry_version": 1,
+  "updated_at": "2026-07-09",
+  "notes": "Tier ordering is measured pass rate on the pinned bundle (day1_45 @ e7c08c5), NOT parameter count -- see docs/proposal_3_1_revision.md. Status lifecycle: active -> deprecated (weight x0.5) -> retired (weight 0). Registry updates never rescore already-paid emission.",
+  "targets": [
+    {
+      "tier_id": "qwen2.5-0.5b",
+      "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "harness_commit": "e7c08c5",
+      "measured_pass_rate": 0.044,
+      "status": "active",
+      "added_at": "2026-07-08"
+    },
+    {
+      "tier_id": "smollm2-360m",
+      "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "harness_commit": "e7c08c5",
+      "measured_pass_rate": 0.133,
+      "status": "active",
+      "added_at": "2026-07-08"
+    },
+    {
+      "tier_id": "qwen2.5-1.5b",
+      "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "harness_commit": "e7c08c5",
+      "measured_pass_rate": 0.356,
+      "status": "active",
+      "added_at": "2026-07-08"
+    }
+  ]
+}

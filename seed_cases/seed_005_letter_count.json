@@ -1,7 +1,7 @@
 {
   "case_id": "seed_005_letter_count",
   "task_prompt": "Count how many times the letter 'r' appears in the string 'strawberry barrier terror'. Store the count under kv key 'count' and finish with the number.",
-  "checker_src": "def check(state, final_answer):\n    return (state['kv'].get('count') == '7', 'E1_wrong_count')\n",
+  "checker_src": "def check(state, final_answer):\n    return (state['kv'].get('count') == '7', 'CH_LETTER_WRONG_COUNT')\n",
   "reference": {
     "actions": [
       {

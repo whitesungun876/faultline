@@ -22,8 +22,8 @@ Design invariants, in order of importance:
 
 1. **Solvability proof or zero.** Every case must include a reference solution that passes its own checker. "Impossible task" spam is structurally worthless.
 2. **Programmatic verdicts only.** Checkers are code assertions over final state, with no LLM-as-judge anywhere in scoring. We trade generality for verifiability, deliberately: failures that cannot be written as assertions, such as tone, helpfulness, or refusal quality, are out of scope by design.
-3. **Pinned measurement instrument.** Target = model checkpoint x harness version x toolbox. Changing any element is a different instrument, a claim we validated empirically when a one-shot prompt fix moved an entire tier's failure distribution.
-4. **Two-level failure signatures.** A coarse signature, failure category plus assertion, meters novelty decay so template re-skins cannot farm rewards; a fine path-sensitive hash handles exact dedup and diagnostics. Feature choice is tuned against ground-truth template labels, not intuition.
+3. **Pinned measurement instruments in a rolling window.** Target = model checkpoint x harness version x toolbox. Changing any element is a different instrument, a claim we validated empirically when a one-shot prompt fix moved an entire tier's failure distribution. Instruments live in a versioned registry (`targets.json`) and age through `active -> deprecated -> retired`, so the question bank tracks current models without retroactively rescoring paid emission.
+4. **Validator-derived signatures only.** Nothing a miner types can mint a novelty bucket. The billing signature is the taxonomy category, matched against a closed prefix table; cosmetic checker rewrites collapse into one behavioral fingerprint (the checker's canonicalized verdict vector over a fixed probe battery); a fine path-sensitive hash remains for diagnostics. Feature choice is tuned against ground-truth template labels, not intuition.
 
 ## What A Boundary Case Looks Like
 
@@ -33,7 +33,7 @@ The unit of mining is a case: a task, a programmatic checker, and a proof it is 
 {
   "case_id": "seed_002_read_before_write",
   "task_prompt": "First store value '80' under kv key 'budget'. Then, ONLY IF the current value of 'budget' is greater than 100, overwrite it with '0'. Otherwise leave it unchanged. Finish with the final value of 'budget'.",
-  "checker_src": "def check(state, final_answer):\n    if state['kv'].get('budget') != '80':\n        return (False, 'B1_state_clobbered')\n    return (str(final_answer).strip() == '80', 'B2_wrong_final')",
+  "checker_src": "def check(state, final_answer):\n    if state['kv'].get('budget') != '80':\n        return (False, 'SD_READ_STATE_CLOBBERED')\n    return (str(final_answer).strip() == '80', 'SD_READ_WRONG_FINAL')",
   "reference": {
     "actions": ["kv_set(budget, 80)", "kv_get(budget)"],
     "final_answer": "80"
@@ -41,7 +41,7 @@ The unit of mining is a case: a task, a programmatic checker, and a proof it is 
 }
 ```
 
-The reference solution passes the checker, so a full score requires the pinned target to genuinely fail. It does, and instructively differently by scale: Qwen-0.5B keeps the state intact but reports an inconsistent final answer (`B2`); Qwen-1.5B actively overwrites the value it was told to protect and burns out at `MAX_STEPS` (`B1`). One case, two tiers, two distinct failure modes, both caught by three lines of assertions. That is the project in miniature: agent failures are minable, checkable, and worth cataloguing.
+The reference solution passes the checker, so a full score requires the pinned target to genuinely fail. It does, and instructively differently by scale: Qwen-0.5B keeps the state intact but reports an inconsistent final answer (`WRONG_FINAL`); Qwen-1.5B actively overwrites the value it was told to protect and burns out at `MAX_STEPS` (`STATE_CLOBBERED`). One case, two tiers, two distinct failure modes, both caught by three lines of assertions. That is the project in miniature: agent failures are minable, checkable, and worth cataloguing.
 
 ## Key Results
 
@@ -71,8 +71,21 @@ A 360M model outperforming a 500M model by 3x kills the assumption that tier = p
 
 ### Scoring Mechanics Under Stress
 
-- Novelty decay on repeated same-signature submissions matches spec exactly: `1.0 -> 0.824 -> 0.746 -> 0.700 -> 0.668`, equal to `0.4 + 0.6 / sqrt(n)`.
-- Signature clustering vs. ground-truth template labels: coarse level scores homogeneity/completeness `1.0/1.0` across all three models; the earlier path-sensitive-only signature dropped to `0.79` completeness on real agents, the bug that motivated the two-level split. See the [full report](evidence/signature_clustering/day1_45_e7c08c5/report.md).
+- Novelty decay on repeated same-category submissions matches spec exactly: `1.0 -> 0.824 -> 0.746 -> 0.700 -> 0.668`, equal to `0.4 + 0.6 / sqrt(n)`.
+- Resubmitting a checker with known *behavior* (same fingerprint, however rewritten) is hammered harder: novelty takes an additional `x0.25`, so the demo's exact-duplicate sequence lands at `0.506 -> 0.487 -> 0.475`. Assertion IDs outside the taxonomy bill at `x0.5` into an `UNCLASSIFIED` bucket.
+- Signature clustering vs. ground-truth template labels: coarse level scores homogeneity/completeness `1.0/1.0` across all three models; the earlier path-sensitive-only signature dropped to `0.79` completeness on real agents, the bug that motivated the split. See the [full report](evidence/signature_clustering/day1_45_e7c08c5/report.md).
+
+## Anti-Manipulation & Governance (Proposal 3.2)
+
+Four attack/trust surfaces raised in external review, and how the pipeline now closes them:
+
+**Signature manipulation.** Previously the coarse signature hashed miner-authored strings (`assertion_id`, with fallbacks to `tags`/`claimed_failure`), so a miner could mint novelty buckets by renaming assertions. Now every billing input is validator-derived: the category comes from a closed prefix table (`_ASSERTION_TAXONOMY`, versioned; extending it is a governed change), and each checker gets a behavioral fingerprint, the hash of its canonicalized verdict vector over a fixed probe battery (`probe_battery()` in `faultline/verify.py`). Renamed assertions, reordered logic, and re-skinned templates all collapse: same behavior, same fingerprint, and a known fingerprint pays a `x0.25` novelty penalty. Minting is bounded by the taxonomy size instead of unbounded free text.
+
+**Target staleness vs. incentive churn.** `targets.json` is a rolling registry: each entry pins `(model_id, harness_commit)` with a measured pass rate and a lifecycle status. Weights are ranked by *measured pass rate* (per the [3.1 revision](docs/proposal_3_1_revision.md), never parameter count), scaled `active = 1.0 / deprecated = 0.5 / retired = 0`. Difficulty is the weighted fraction of registry targets a case fails, so failing the newest, strongest tier pays most and miners chase current models. Registry updates never rescore already-paid emission; old cases simply stop earning on retired instruments.
+
+**Phase-2 cold start.** "Enough failure cases" is machine-checkable, not a vibe: `python -m faultline.milestones` evaluates the corpus against pre-registered thresholds — at least 8 taxonomy categories where each has ≥ 20 distinct checker *fingerprints* (diversity, immune to template spam) observed across ≥ 2 registry tiers (so a judge model doesn't just learn one target's quirks). `UNCLASSIFIED` never qualifies.
+
+**Owner as oracle.** Scoring parameters live in `scoring_params.json`, versioned, each version citing evidence. A version only activates if it was announced at least 7 days before its `effective_from` (`GOVERNANCE_TIMELOCK_SECONDS`, a code constant, so shortening the timelock itself requires a public diff). Validators silently void any version that violates the timelock: parameter changes cannot be sprung on miners. Full DAO voting is deliberately deferred; the enforceable promise at this stage is "no surprise parameter changes."
 
 ## Evidence Log
 
@@ -94,8 +107,11 @@ Seed traces live under `evidence/traces/<model>/`. Generated matrix traces live 
 # 1. Pipeline demo: no GPU, no chain, scripted backends, all validity gates
 python run_local_demo.py
 
-# 2. Determinism + decay semantics
+# 2. Determinism + decay + anti-manipulation/governance semantics
 python -m pytest -q
+
+# 2b. Phase-2 readiness checklist from the corpus index
+python -m faultline.milestones
 
 # 3. Real-model matrix: downloads Qwen/SmolLM via HF or ModelScope; MPS/CUDA/CPU
 python generate_case_bundle.py && python run_case_matrix.py
@@ -104,12 +120,12 @@ python generate_case_bundle.py && python run_case_matrix.py
 # See README_DAY1.md
 ```
 
-Repo layout: `faultline/` core harness, toolbox, verify, casegen, bundle; `neurons/` Bittensor miner/validator; `seed_cases/` and `generated_cases/` inventory; `tests/`; `docs/` operations notes and design revisions.
+Repo layout: `faultline/` core harness, toolbox, verify, registry, milestones, casegen, bundle; `neurons/` Bittensor miner/validator; `seed_cases/` and `generated_cases/` inventory; `targets.json` rolling target registry; `scoring_params.json` timelocked scoring parameters; `tests/`; `docs/` operations notes and design revisions.
 
 ## Known Limitations
 
-Honest ledger, not fine print: determinism is currently single-device. Greedy decoding reproduces on one machine; cross-hardware float divergence is an open item for multi-validator, mitigated by verdict-level rather than token-level gating. The checker sandbox is subprocess plus `rlimit`, not a container: testnet-acceptable, mainnet-blocking. Closed-source API targets are supported only statistically. And the measurement domain is deliberately narrow: pinned configs, mockable dependencies, assertable failures.
+Honest ledger, not fine print: determinism is currently single-device. Greedy decoding reproduces on one machine; cross-hardware float divergence is an open item for multi-validator, mitigated by verdict-level rather than token-level gating. The checker sandbox is subprocess plus `rlimit`, not a container: testnet-acceptable, mainnet-blocking. The probe battery behind the checker fingerprint is public, so a determined miner can Goodhart it by special-casing probe states; the mitigation path is battery versioning plus validator-private probes derived from the corpus, not yet implemented. The billing signature is category-level, which means two genuinely distinct failures in the same category share a decay counter — a deliberate trade against re-skin farming. Corpus signatures were reset when the signature definition changed (v1 archive kept in `corpus_index.json`). Closed-source API targets are supported only statistically. And the measurement domain is deliberately narrow: pinned configs, mockable dependencies, assertable failures.
 
 ## Roadmap
 
-Testnet registration, faucet-gated, then miner auto-supply loop from the case generator, 3B+ tier to de-censor cross-tier failures, containerized environments, and a Watchdog lane: trajectory-level failure-prediction models evaluated time-split on freshly mined cases.
+Testnet registration, faucet-gated, then miner auto-supply loop from the case generator, 3B+ tier entering the rolling registry to de-censor cross-tier failures, validator-private probe rotation for the fingerprint battery, containerized environments, and a Watchdog lane: trajectory-level failure-prediction models evaluated time-split on freshly mined cases, unlocked when `python -m faultline.milestones` reports ready.

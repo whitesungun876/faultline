@@ -1,0 +1,19 @@
+{
+  "_governance": "Versioned scoring parameters. A version only activates if effective_from - announced_at >= GOVERNANCE_TIMELOCK_SECONDS (7 days, code constant in faultline/verify.py). Validators IGNORE versions that violate the timelock, so parameter changes cannot be sprung on miners. Every version must cite evidence, following docs/proposal_3_1_revision.md discipline.",
+  "versions": [
+    {
+      "version": 1,
+      "announced_at": "2026-07-09T00:00:00Z",
+      "effective_from": "2026-07-09T00:00:00Z",
+      "evidence": "README.md (Scoring Mechanics + Governance); genesis version, timelock-exempt",
+      "params": {
+        "difficulty_weight": 0.4,
+        "novelty_weight": 0.6,
+        "novelty_decay": "inv_sqrt",
+        "unclassified_novelty_penalty": 0.5,
+        "duplicate_fingerprint_penalty": 0.25,
+        "ema_alpha": 0.2
+      }
+    }
+  ]
+}
