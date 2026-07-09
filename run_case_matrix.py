@@ -9,7 +9,13 @@ import time
 from collections import Counter
 
 from faultline.harness import HFBackend, run_agent, run_reference
-from faultline.verify import failure_signature, run_checker, validate_schema
+from faultline.verify import (
+    coarse_failure_signature,
+    failure_category,
+    fine_failure_signature,
+    run_checker,
+    validate_schema,
+)
 
 
 def parse_model(spec: str) -> tuple[str, str]:
@@ -90,7 +96,8 @@ def evaluate_one(case: dict, backend: HFBackend, seen_signatures: dict[str, int]
             "trace": trace,
         }
 
-    sig = failure_signature(case, trace, assertion_id)
+    sig = coarse_failure_signature(case, assertion_id)
+    fine_sig = fine_failure_signature(case, trace, assertion_id)
     n = seen_signatures.get(sig, 0)
     novelty = 1.0 / ((n + 1) ** 0.5)
     seen_signatures[sig] = n + 1
@@ -100,6 +107,9 @@ def evaluate_one(case: dict, backend: HFBackend, seen_signatures: dict[str, int]
         "score": score,
         "assertion_id": assertion_id,
         "signature": sig,
+        "coarse_signature": sig,
+        "fine_signature": fine_sig,
+        "failure_category": failure_category(case, assertion_id),
         "novelty": round(novelty, 4),
         "answer": answer,
         "elapsed_s": elapsed,

@@ -1,0 +1,107 @@
+{
+  "qwen0p5": {
+    "coarse_signature": {
+      "clusters": 9,
+      "completeness": 1.0,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 43,
+      "split_template_count": 0,
+      "split_templates": {}
+    },
+    "fine_signature": {
+      "clusters": 14,
+      "completeness": 0.8605,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 43,
+      "split_template_count": 4,
+      "split_templates": {
+        "char_letter_count": {
+          "5be9b8e91b6bd394": 4,
+          "71f3e815b5da74bb": 1
+        },
+        "char_substring_overlap": {
+          "092e86251129cc3e": 4,
+          "647d703f99b727ef": 1
+        },
+        "state_overwrite_protection": {
+          "2fed6337768005d9": 2,
+          "624dfcdff2201b24": 1
+        },
+        "state_read_before_write": {
+          "629b7c2a65cfdd7f": 2,
+          "6767c6a0cd8a7c97": 1,
+          "dd2c146e34aa1da5": 2
+        }
+      }
+    }
+  },
+  "qwen1p5": {
+    "coarse_signature": {
+      "clusters": 8,
+      "completeness": 1.0,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 29,
+      "split_template_count": 0,
+      "split_templates": {}
+    },
+    "fine_signature": {
+      "clusters": 14,
+      "completeness": 0.7931,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 29,
+      "split_template_count": 3,
+      "split_templates": {
+        "char_fine_compare": {
+          "73b29a137cbf3a8f": 1,
+          "7b2932af1b70fafc": 3
+        },
+        "state_conditional_write": {
+          "38008c5d2f7dd42d": 2,
+          "70fe4cba0b0c4fc8": 1,
+          "77d3e828311c6827": 1
+        },
+        "state_read_before_write": {
+          "803b946ccdcd1b52": 1,
+          "868072a99fdd3dd9": 1,
+          "b3c43b8acd45e548": 1,
+          "ee1cc4a608f85ef7": 1
+        }
+      }
+    }
+  },
+  "smollm360": {
+    "coarse_signature": {
+      "clusters": 9,
+      "completeness": 1.0,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 39,
+      "split_template_count": 0,
+      "split_templates": {}
+    },
+    "fine_signature": {
+      "clusters": 10,
+      "completeness": 0.9487,
+      "homogeneity": 1.0,
+      "mixed_signature_count": 0,
+      "mixed_signatures": {},
+      "n": 39,
+      "split_template_count": 1,
+      "split_templates": {
+        "state_conditional_write": {
+          "30c8bb1932f64509": 3,
+          "fb17d9f398e7e1f9": 2
+        }
+      }
+    }
+  }
+}

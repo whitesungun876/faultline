@@ -71,6 +71,7 @@ python neurons/validator.py --netuid <NETUID> --subtensor.network test \
 3. Difficulty 恒为 1（单目标注册表）；Generality 未实现。
 4. miner 只轮询种子案例，无自动生成；validator 单机、corpus 索引为本地 JSON 未共识。
 5. dendrite 广播查询全部 UID，无采样与黑名单。
+6. 当前“确定性”只证明单设备确定性。同一台 Mac/MPS 上贪心解码可复现；跨 CUDA/MPS/CPU 时浮点与 kernel 差异可能改变边缘轨迹。多验证者阶段需要钉死设备/运行时，或对判定分歧引入容忍投票。
 
 ## 明日以后（按序）
 

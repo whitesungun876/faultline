@@ -42,6 +42,9 @@ def main() -> None:
             "novelty": result.get("novelty"),
             "assertion_id": result.get("assertion_id"),
             "signature": result.get("signature"),
+            "coarse_signature": result.get("coarse_signature"),
+            "fine_signature": result.get("fine_signature"),
+            "failure_category": result.get("failure_category"),
         }
         rows.append(row)
         if row["signature"]:
